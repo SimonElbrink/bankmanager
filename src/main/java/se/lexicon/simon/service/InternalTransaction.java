@@ -13,8 +13,11 @@ public class InternalTransaction implements Transaction {
     private AccountDao accountDao;
     private CustomerDao customerDao;
 
-    public InternalTransaction(AccountDao accountDao, CustomerDao customerDao) {
+    public void setAccountDao(AccountDao accountDao) {
         this.accountDao = accountDao;
+    }
+
+    public void setCustomerDao(CustomerDao customerDao) {
         this.customerDao = customerDao;
     }
 
