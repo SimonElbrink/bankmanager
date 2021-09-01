@@ -1,7 +1,9 @@
 package se.lexicon.simon.service;
 
 import se.lexicon.simon.data.dao.AccountDao;
+import se.lexicon.simon.data.dao.AccountDaoImpl;
 import se.lexicon.simon.data.dao.CustomerDao;
+import se.lexicon.simon.data.dao.CustomerDaoImpl;
 import se.lexicon.simon.model.Account;
 import se.lexicon.simon.model.Customer;
 
@@ -14,6 +16,11 @@ public class FactoryImpl implements Factory {
 
     private AccountDao accountDao;
     private CustomerDao customerDao;
+
+    public FactoryImpl(AccountDao accountDao, CustomerDao customerDao) {
+        this.accountDao = accountDao;
+        this.customerDao = customerDao;
+    }
 
     @Override
     public Optional<Account> createAccount() {

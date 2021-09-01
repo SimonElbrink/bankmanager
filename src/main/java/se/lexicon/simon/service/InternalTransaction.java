@@ -13,6 +13,11 @@ public class InternalTransaction implements Transaction {
     private AccountDao accountDao;
     private CustomerDao customerDao;
 
+    public InternalTransaction(AccountDao accountDao, CustomerDao customerDao) {
+        this.accountDao = accountDao;
+        this.customerDao = customerDao;
+    }
+
     @Override
     public boolean verifyAccount(Integer authorizeUserID) {
         return customerDao.findById(authorizeUserID).isPresent();
