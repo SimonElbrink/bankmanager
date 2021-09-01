@@ -2,6 +2,7 @@ package se.lexicon.simon;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import se.lexicon.simon.config.MyBeanCreator;
 import se.lexicon.simon.config.MyComponentScan;
 import se.lexicon.simon.data.dao.AccountDao;
 import se.lexicon.simon.data.dao.AccountDaoImpl;
@@ -11,20 +12,13 @@ import se.lexicon.simon.model.Account;
 import se.lexicon.simon.service.Factory;
 import se.lexicon.simon.service.FactoryImpl;
 import se.lexicon.simon.service.InternalTransaction;
-import se.lexicon.simon.service.Transaction;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
     public static void main( String[] args )
     {
 
-//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyComponentScan.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MyBeanCreator.class);
 
         AccountDao accountDao = context.getBean("accountDaoImpl", AccountDao.class);
 
@@ -32,17 +26,12 @@ public class App
 
         factory.createAccount();
 
-
         accountDao.findAll().forEach(System.out::println);
-
-
 
 //        noDI();
     }
 
     private static void noDI() {
-
-
         AccountDao accountDao = new AccountDaoImpl();
         CustomerDao customerDao = new CustomerDaoImpl();
 

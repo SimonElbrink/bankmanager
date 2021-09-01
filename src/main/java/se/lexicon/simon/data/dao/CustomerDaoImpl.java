@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Optional;
 
-@Component
 public class CustomerDaoImpl implements CustomerDao{
 
 

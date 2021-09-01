@@ -7,7 +7,7 @@ import java.util.Collection;
 
 import java.util.HashSet;
 import java.util.Optional;
-@Component
+
 public class AccountDaoImpl implements AccountDao{
 
     Collection<Account> storage = null;

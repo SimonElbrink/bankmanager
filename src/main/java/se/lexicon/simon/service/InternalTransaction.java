@@ -1,26 +1,23 @@
 package se.lexicon.simon.service;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import se.lexicon.simon.data.dao.AccountDao;
 import se.lexicon.simon.data.dao.CustomerDao;
 import se.lexicon.simon.model.Account;
 
 import java.util.NoSuchElementException;
 
-@Service
+
 public class InternalTransaction implements Transaction {
 
     private AccountDao accountDao;
     private CustomerDao customerDao;
 
-    @Autowired
     public void setAccountDao(AccountDao accountDao) {
         this.accountDao = accountDao;
     }
 
-    @Autowired
+
     public void setCustomerDao(CustomerDao customerDao) {
         this.customerDao = customerDao;
     }
