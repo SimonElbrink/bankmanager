@@ -1,12 +1,13 @@
 package se.lexicon.simon.data.dao;
 
+import org.springframework.stereotype.Component;
 import se.lexicon.simon.model.Account;
 
 import java.util.Collection;
 
 import java.util.HashSet;
 import java.util.Optional;
-
+@Component
 public class AccountDaoImpl implements AccountDao{
 
     Collection<Account> storage = null;

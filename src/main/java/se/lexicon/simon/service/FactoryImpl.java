@@ -1,5 +1,8 @@
 package se.lexicon.simon.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import se.lexicon.simon.data.dao.AccountDao;
 import se.lexicon.simon.data.dao.AccountDaoImpl;
 import se.lexicon.simon.data.dao.CustomerDao;
@@ -11,12 +14,13 @@ import java.util.Optional;
 
 import java.util.UUID;
 
-
+@Service
 public class FactoryImpl implements Factory {
 
     private AccountDao accountDao;
     private CustomerDao customerDao;
 
+    @Autowired
     public FactoryImpl(AccountDao accountDao, CustomerDao customerDao) {
         this.accountDao = accountDao;
         this.customerDao = customerDao;

@@ -23,9 +23,9 @@ public class App
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
 
-        AccountDao accountDao = context.getBean("accountDao", AccountDao.class);
+        AccountDao accountDao = context.getBean("accountDaoImpl", AccountDao.class);
 
-        Factory factory = context.getBean("factory", Factory.class);
+        Factory factory = context.getBean("factoryImpl", Factory.class);
 
         factory.createAccount();
 
